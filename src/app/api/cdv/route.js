@@ -1,12 +1,44 @@
-//Consulta Dolar Venezuela
+// CONSULTA DOLAR VENEZUELA
 import { pyDolarVenezuela } from "consulta-dolar-venezuela";
 
-const pyDolar = new pyDolarVenezuela('bcv');
+const pyDolar = new pyDolarVenezuela('criptodolar');
+
+function getCurrentDate() {
+    const today = new Date();
+    const day = String(today.getDate()).padStart(2, '0');
+    const month = String(today.getMonth() + 1).padStart(2, '0'); 
+    const year = today.getFullYear();
+    return `${day}/${month}/${year}`;
+}
+
+function formatPrice(priceOld) {
+    const priceString = priceOld.toString();
+    const formattedPrice = `${priceString.slice(0, -6)}.${priceString.slice(-6)}`;
+    return parseFloat(formattedPrice); 
+}
 
 export async function GET(req) {
     try {
         const data = await pyDolar.getAllMonitors();
-        return new Response(JSON.stringify(data), {
+
+        const filteredData = {
+            bcv: {
+                date: getCurrentDate(),
+                change: data.monitors.bcv.change,
+                percent: data.monitors.bcv.percent,
+                price: formatPrice(data.monitors.bcv.price_old), 
+                symbol: data.monitors.bcv.symbol
+            },
+            enparalelovzla: {
+                date: getCurrentDate(),
+                change: data.monitors.enparalelovzla.change,
+                percent: data.monitors.enparalelovzla.percent,
+                price: formatPrice(data.monitors.enparalelovzla.price_old), 
+                symbol: data.monitors.enparalelovzla.symbol
+            }
+        };
+
+        return new Response(JSON.stringify(filteredData), {
             status: 200,
             headers: { 'Content-Type': 'application/json' },
         });
