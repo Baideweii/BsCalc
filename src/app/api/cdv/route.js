@@ -22,15 +22,14 @@ export async function GET(req) {
         const data = await pyDolar.getAllMonitors();
 
         const filteredData = {
+            date: getCurrentDate(),
             bcv: {
-                date: getCurrentDate(),
                 change: data.monitors.bcv.change,
                 percent: data.monitors.bcv.percent,
                 price: formatPrice(data.monitors.bcv.price_old), 
                 symbol: data.monitors.bcv.symbol
             },
             enparalelovzla: {
-                date: getCurrentDate(),
                 change: data.monitors.enparalelovzla.change,
                 percent: data.monitors.enparalelovzla.percent,
                 price: formatPrice(data.monitors.enparalelovzla.price_old), 

@@ -1,6 +1,7 @@
 "use client";
 // import { useEffect } from 'react';
 import Monitors from '../components/Monitors';
+import Monitors2 from '@/components/SaveMonitors';
 
 function HomePage() {
   // const fetchData = async () => {
@@ -29,6 +30,7 @@ function HomePage() {
   return (
     <div>
       <h1>Soy el home</h1>
+      {/* <Monitors2/> */}
       <Monitors/>
     </div>
   );

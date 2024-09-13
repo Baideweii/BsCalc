@@ -15,7 +15,7 @@ export async function GET(req) {
     const client = await clientPromise;
     const db = client.db();
 
-    const data = await db.collection('users').find({}).toArray();
+    const data = await db.collection('monitors').find({}).toArray();
 
     return new Response(JSON.stringify({ data }), {
       status: 200,
