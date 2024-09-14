@@ -14,6 +14,9 @@ export default function NavBar() {
                 <li>
                     <Link href="/calculate">Calculadora</Link>
                 </li>
+                <li>
+                    <Link href="/history">Historial</Link>
+                </li>
             </ul>
         </nav>
     )
