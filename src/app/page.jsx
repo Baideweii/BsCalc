@@ -30,7 +30,7 @@ function HomePage() {
   return (
     <div>
       <h1>Soy el home</h1>
-      <Monitors2/>
+      {/* <Monitors2/> */}
       <Monitors/>
     </div>
   );

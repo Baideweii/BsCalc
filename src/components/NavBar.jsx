@@ -2,22 +2,24 @@ import Link from 'next/link'
 
 export default function NavBar() {
     return (
-        <nav>
-            <h1>Navbar</h1>
-            <ul>
-                <li>
-                    <Link href="/">Home</Link>
-                </li>
-                <li>
-                    <Link href="/about">About</Link>
-                </li>
-                <li>
-                    <Link href="/calculate">Calculadora</Link>
-                </li>
-                <li>
-                    <Link href="/history">Historial</Link>
-                </li>
-            </ul>
+        <nav className="bg-gray-800 text-white p-4">
+            <div className="container mx-auto flex justify-between items-center">
+                <h1 className="text-xl font-bold">Navbar</h1>
+                <ul className="flex space-x-4">
+                    <li>
+                        <Link href="/" className="hover:text-gray-300">Home</Link>
+                    </li>
+                    <li>
+                        <Link href="/about" className="hover:text-gray-300">About</Link>
+                    </li>
+                    <li>
+                        <Link href="/calculate" className="hover:text-gray-300">Calculadora</Link>
+                    </li>
+                    <li>
+                        <Link href="/history" className="hover:text-gray-300">Historial</Link>
+                    </li>
+                </ul>
+            </div>
         </nav>
     )
 }
