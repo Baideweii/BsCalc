@@ -7,10 +7,10 @@ export default function NavBar() {
                 <h1 className="text-xl font-bold">Navbar</h1>
                 <ul className="flex space-x-4">
                     <li>
-                        <Link href="/" className="hover:text-gray-300">Home</Link>
+                        <Link href="/" className="hover:text-gray-300">Hogar</Link>
                     </li>
                     <li>
-                        <Link href="/about" className="hover:text-gray-300">About</Link>
+                        <Link href="/about" className="hover:text-gray-300">Sobre nosotros</Link>
                     </li>
                     <li>
                         <Link href="/calculate" className="hover:text-gray-300">Calculadora</Link>
