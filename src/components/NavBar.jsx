@@ -16,7 +16,7 @@ export default function NavBar() {
                         <Link href="/calculate" className="hover:text-gray-300">Calcular</Link>
                     </li>
                     <li>
-                        <Link href="/history" className="hover:text-gray-300">Historial</Link>
+                        <Link href="/history" className="hover:text-gray-300">Historial de divisas</Link>
                     </li>
                 </ul>
             </div>
