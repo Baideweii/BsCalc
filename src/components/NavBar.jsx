@@ -13,7 +13,7 @@ export default function NavBar() {
                         <Link href="/about" className="hover:text-gray-300">Sobre nosotros</Link>
                     </li>
                     <li>
-                        <Link href="/calculate" className="hover:text-gray-300">Calcular</Link>
+                        <Link href="/calculate" className="hover:text-gray-300">Calculadora</Link>
                     </li>
                     <li>
                         <Link href="/history" className="hover:text-gray-300">Historial</Link>
